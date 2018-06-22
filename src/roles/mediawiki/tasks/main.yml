@@ -51,6 +51,13 @@
 #
 # MEDIAWIKI CORE
 #
+- name: Ensure MediaWiki core ignores submodules
+  blockinfile:
+    path: "{{ m_mediawiki }}/.git/config"
+    block: |
+      [diff]
+          ignoreSubmodules = all
+  ignore_errors: True
 - name: Ensure proper MediaWiki git version installed
   git:
     repo: https://gerrit.wikimedia.org/r/p/mediawiki/core.git
@@ -59,7 +66,12 @@
     umask: "0002"
   tags:
     - latest
-
+- name: Ensure MediaWiki core ignores submodules
+  blockinfile:
+    path: "{{ m_mediawiki }}/.git/config"
+    block: |
+      [diff]
+          ignoreSubmodules = all
 
 #
 # SKINS
