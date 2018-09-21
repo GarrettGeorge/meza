@@ -131,7 +131,7 @@ sshd_config_PasswordAuthentication: "yes"
 #
 
 # Version of MediaWiki core
-mediawiki_version: "1.27.4"
+mediawiki_version: "1.27.5"
 
 # Branch to use on many extensions extensions and skins
 mediawiki_default_branch: "REL1_27"
